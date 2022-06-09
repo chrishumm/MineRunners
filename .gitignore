@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+/x64/Debug
+/packages/AllegroDeps.1.3.0.4
+/packages/Allegro.5.1.12.4
+/assets/level1.txt~
+/assets/oldassets
+/.vs/MineRunner/v17
+/.vs/MineRunner/FileContentIndex
