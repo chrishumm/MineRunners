@@ -1,3 +1,5 @@
+![alt text](https://github.com/chrishumm/MineRunners/blob/e5c9c163ebcae180ea6ae5acd246a3eae88924de/assets/title_background.bmp)
+
 # MineRunner
 
 MineRunner is an open-source game written in C++. It uses the allegro graphics library for drawing sprites onto the screen. The objective of the game is to get to the end of the stage with as many gold points as possible whilst avoiding enemies. 
@@ -60,3 +62,5 @@ I am still working on this from time to time for fun.
 Please message me privately if you want to contribute.
 
 # Contributors ✨
+
+- Me, Myself and I
