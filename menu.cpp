@@ -46,6 +46,9 @@ void menu::menuCreate()
 		//generate our primitive in set position, then draw text upon that box at that set position.
 		al_draw_filled_rectangle(menuItemPosX[i],menuItemPosY[i],menuItemPosX[i]+menuItemWidth[i],menuItemPosY[i]+menuHeight,al_map_rgb(0,255,0));
 		al_draw_textf(outputNames , al_map_rgb(45, 245, 10), menuItemPosX[i], menuItemPosY[i], 0,menuItemName[i].c_str());
+
+		m_background = al_load_bitmap("assets/title_background.bmp"); //loading our background
+		al_draw_bitmap_region(m_background, 0, 0, WIDTH+10, HEIGHT, -10, 20, 0);
 	}
 }
 bool menu::allegro_font_init() //loading out font

@@ -33,7 +33,7 @@ private:
 	void launchOptions();	//called when options is clicked
 	ALLEGRO_BITMAP* m_background;	//background for menu
 	ALLEGRO_BITMAP* m_font_from_file;// font we've grabbed from bitmap
-
+	ALLEGRO_BITMAP* m_title_card;
 	unsigned int m_lives; //players lives
 	int m_current_level; //current level player is playing
 	unsigned int m_max_level; //max amount of levels player CAN player

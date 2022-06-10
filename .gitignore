@@ -37,3 +37,5 @@
 /assets/oldassets
 /.vs/MineRunner/v17
 /.vs/MineRunner/FileContentIndex
+/x64/Release/MineRunner.tlog
+/x64/Release

@@ -183,9 +183,15 @@ hud* create_player_hud = new hud(newhero,level,timer); //create our hud, pass in
  for(;;) //infinite gameloop
 {
 	al_start_timer(timer); //start timer
-
 	while(newhero->getlives() > 0)
 	{
+		if(newhero->control->exitGame() == true)
+		{
+			delete create_player_hud; //deallocate hud
+			create_player_hud = NULL;
+			deAlloc();
+			return 0;
+		}
 		if(newhero->getHealth() > 0) //Player controls are unlocked
 			newhero->control->IsKeyPressed(&ev,event_queue, false); //all players input object and deal with key presses
 		else
@@ -193,6 +199,8 @@ hud* create_player_hud = new hud(newhero,level,timer); //create our hud, pass in
 			newhero->control->IsKeyPressed(&ev,event_queue, true);
 			if(create_player_hud->countdownOnKill() == true) //countdown finished?
 				{
+					delete create_player_hud; //deallocate hud
+					create_player_hud = NULL;
 					deAlloc();
 					return 2;
 				}
@@ -288,7 +296,7 @@ hud* create_player_hud = new hud(newhero,level,timer); //create our hud, pass in
 				{
 					platform_container[i]->setActive(); //object is now active
 					level->setGravity(0.0f); //stop gravity from pushing player down
-					newhero->setY(platform_container[i]->getY() - newhero->getHeight()); //put player on top of object
+					//newhero->setY(platform_container[i]->getY() - newhero->getHeight()); //put player on top of object
 				}
 			}
 			if(platform_container[i]->getName() == "Movable Block") //can player move this block?

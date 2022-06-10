@@ -20,6 +20,7 @@ public:
 	bool last_pressed_key[SIZE_OF_KEYS_PRESSED_ENUM];
 	bool minimised;
     void IsKeyPressed(ALLEGRO_EVENT* ev, ALLEGRO_EVENT_QUEUE* event_queue, bool freeze);
+	bool exitGame();
 	int* m_x;
 	int* m_y;
 	int* m_score;
@@ -38,6 +39,7 @@ public:
 	bool platformLift(int direction);
 	float m_x_velocity;
 private:
+	bool m_exit_game;
 	bool m_on_platform;
 	bool platform_below;
 	bool isPlatform();

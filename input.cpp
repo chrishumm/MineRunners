@@ -32,11 +32,20 @@ input::input(int* x, int* y, ALLEGRO_EVENT* ev,ALLEGRO_EVENT_QUEUE* d, int* widt
 	m_speed = 0.1;
 	m_is_jumping = false;
 	m_max_jump_height = 70;
+	m_exit_game = false;
 }
 
 input::input(entities * creature_Object)
 {
 	m_creature = creature_Object;
+}
+
+bool input::exitGame()
+{
+	if (m_exit_game == false)
+		return false;
+	else
+		return true;
 }
 
 void input::IsKeyPressed(ALLEGRO_EVENT* ev, ALLEGRO_EVENT_QUEUE* d, bool freeze) //check for key presses
@@ -64,7 +73,8 @@ if(got_event == false) return;
         switch(ev->keyboard.keycode)
 		{
 		case ALLEGRO_KEY_ESCAPE:
-			exit(1); //exits out of the game
+			m_exit_game = true;
+			//exit(1); //exits out of the game
 			break;
 		case ALLEGRO_KEY_W:
 			keys_pressed[KEY_W] = true; //sets an array of bool to true
@@ -146,7 +156,7 @@ if(got_event && ev->type == ALLEGRO_EVENT_TIMER) //timer deals with updates per 
 {
 	if(minimised == true)
 	{
-		//al_rest(0.02);
+		al_rest(0.02);
 		return;
 	}
 
